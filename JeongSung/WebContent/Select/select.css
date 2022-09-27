@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+* {
+	background-color: #FFFBEB;
+}
+
+.select_img {
+	margin-left: 15%;
+	margin-top: 5%;
+}

@@ -17,7 +17,7 @@
 			</div>
 			<div class="header_menu_container">
 				<img src="pencil.png" width=15 height=15 /> 
-				<a href="">좋은 글 나누기</a>
+				<a href="" class="write_button">좋은 글 나누기</a>
 			</div>
 		</div>
 		<br />

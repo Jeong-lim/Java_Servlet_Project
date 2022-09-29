@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'GangwonEdu_OTFBoldA';
+    margin: 0;
+    padding: 0;
+}
+.header_container {
+	float: right;
+	margin-right: 10%;
+}
+.book_button_wrapper {
+	float: left;
+}
+.header_container {
+	margin-top: 2%;
+}
+header {
+}
+
+.header_menu_container {
+	float: left;
+}
+.book_button {
+	margin-right: 30px;
+}
+
+.logo {
+	margin-left: 5%;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.people_class {
+	
+	float: right;
+	
+}
+
+.main_img_container {
+	width: 100%;
+}
+
+.people_img {
+	right: 0;
+}
+
+.header_nim {
+	float: left;
+	font-weight: bolder;
+}
+
+.header_name {
+	float: left;
+	color: #A5B4FC;
+}
+
+.header_content {
+	font-weight: 100;
+	font-size: large;
+}
+
+.header_content_container {
+	float:left;
+	margin-left: 20%;
+}
+
+.header_img_container {
+	float:right;
+	margin-right: 20%;
+}
+
+.header_all_container {
+	width: 100%;
+}
+
+.news_container {
+	width: 100%;
+	background-color: #FFFBEB;
+	padding-bottom: 5%;
+}
+
+.news_content_container {	
+	margin-left: 17%;
+	padding-top: 7%;
+}
+
+h4 {
+	line-height: 0.5;
+}
+
+.article_container {
+	width: 100%;
+	padding-bottom: 5%;
+}
+
+.article_content_container {	
+	margin-left: 17%;
+	padding-top: 7%;
+}
+
+html,body{
+    margin:0; padding:0;
+}
+
+footer {
+
+    border-top: 1px solid #D1D5DB;
+}
+footer .inner {
+    padding: 40px 0 60px 0
+}
+footer .menu {
+    display: flex;
+    justify-content: center;
+}
+footer .menu li {
+    position: relative;
+}
+footer .menu li::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -1px;
+    margin: auto;
+}
+footer .menu li:last-child::before {
+    display: none;
+}
+footer .menu li a {
+    color: #ccc;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 15px;
+    display: block;
+}
+footer .menu li a.green {
+    color: #669900
+}
+footer .btn-group {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .btn-group .btn {
+    font-size: 12px;
+    margin-right: 10px;
+}
+footer .btn-group .btn:last-child {
+    margin-right: 0px;
+}
+footer .info {
+    margin-top: 30px;
+    text-align: center;
+}
+footer .info span {
+    margin-right: 20px;
+    color: #999;
+    font-size: 12px;
+}
+footer .info span:last-child {
+    margin-right: 0;
+}
+footer .copyright {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+footer .logo {
+    margin: 30px auto 0;
+}
+
+.card {
+	box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px
+}
+a {
+  text-decoration: none;
+}

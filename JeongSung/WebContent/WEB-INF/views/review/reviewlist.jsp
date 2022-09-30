@@ -30,6 +30,7 @@
 						<div class="author">${review.author}</div>
 						<div class="memo">${review.memo}</div>
 					</div>
+					<a href="ReviewDelete.do?reviewNumber=${review.reviewNumber}">정보 삭제</a>
 				</div>
 			</div>
 		</div>

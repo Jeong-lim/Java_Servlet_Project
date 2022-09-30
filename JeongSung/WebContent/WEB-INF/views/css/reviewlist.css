@@ -1,0 +1,72 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NotoSerifKR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	font-family: 'NotoSerifKR';
+}
+
+div.d1 {
+	width: 30%;
+	float: left;
+	margin-right: 3%;
+	margin-top: 5%;
+	box-shadow: rgba(149, 157, 165, 0.3) 0px 12px 48px 0px;
+}
+	
+
+.bookTitle {
+	float: left;
+	font-size: x-large;
+}
+
+.bookType {
+	float: left;
+	margin-left: 5%;
+	background-color: #D1FAE5;
+	margin-top: 2%;
+	color: #34D399;
+}
+
+.content_container {
+	color: grey;
+}
+
+._container {
+	margin: 7%;
+}
+.author {
+	margin-bottom: 5%;
+}
+
+.list_container {
+	margin-left: 13%;
+	margin-right: 13%;
+}
+
+.list_header_container {
+	margin-top: 3%;
+	text-align: center;
+	margin-bottom: 5%;
+	color: black;
+}
+
+h1 {
+	color: grey;	
+}
+
+h3 {
+	color: grey;
+}
+
+.list_title_container {
+	text-align: center;
+}
+
+.list_header_title2 {
+	color: black;
+}

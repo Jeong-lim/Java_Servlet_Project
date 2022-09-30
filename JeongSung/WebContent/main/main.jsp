@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<style><%@include file="main.css"%></style>
+<style><%@include file="/WEB-INF/css/main.css"%></style>
 <%@ include file="../header/header.jsp"%>
 </head>
 <body>
@@ -13,13 +14,13 @@
 	<div style="background-color: grey">
 		<div class="header_all_container">
 			<div style="line-height: 0.6" class="header_content_container">
-				<h1 class="header_name">성호</h1>
+				<h1 class="header_name">${name}</h1>
 				<h1 class="header_nim">님,</h1>
 				<br /> <br /> <br /> <br /> <br /> <br />
 
 				<h1>시간날 때 읽어보세요🧐</h1>
 				<div class="header_content">
-					Jeong sung팀의 마음이 차곡차곡 쌓이는 정성 서재,
+					${name}팀의 마음이 차곡차곡 쌓이는 정성 서재,
 					<p></p>
 					서로에게 카톡으로, 전화로, 말로 추천해주던 책과 기사를 이곳에서 나눠주세요.
 					<p></p>

@@ -5,29 +5,46 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<%@ include file="../../../header/header.jsp"%>
+<style><%@include file="../css/reviewlist.css"%></style>
 </head>
 <body>
-	<table border=1>
-<tr>
-	<th>리뷰어아이디</th>
-	<th>리뷰어이름</th>
-	<th>리뷰글번호</th>
-	<th>책타입</th>
-	<th>책제목</th>
-	<th>저자</th>
-	<th>메모</th>
-</tr>
-<c:forEach var="review" items="${reviewlist}">
- <tr>
- 	<td><a href="ReviewDetails.do?reviewerId=${review.reviewerId}">${review.reviewerId}</a></td>
+
+	<div class="list_header_container">
+		<div class="list_title_container">
+			<h1 class="list_header_title2">성호의 서재</h1>
+		</div>
+
+		<h3>안녕하세요. 성호의 서재입니다!</h3>
+	</div>
+
+
+	<c:forEach var="review" items="${reviewlist}">
+		<div class="list_container">
+			<div class="d1">
+				<div class="_container">
+					<div class="bookTitle">${review.bookTitle}</div>
+					<div class="bookType">${review.bookType}</div>
+					<br /> <br />
+					<div class="content_container">
+						<div class="author">${review.author}</div>
+						<div class="memo">${review.memo}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<%--  <tr>
+ 	<td><a href="ReviewDetails.do?reviewNumber=${review.reviewNumber}">${review.reviewNumber}</a></td>
  	<td>${review.reviewerName}</td>
- 	<td>${review.reviewNumber}</td>
  	<td>${review.bookType}</td>
  	<td>${review.bookTitle}</td>
  	<td>${review.author}</td>
  	<td>${review.memo}</td>	
- </tr>
+ </tr> --%>
  </c:forEach>
- </table>
+ 	
 </body>
 </html>

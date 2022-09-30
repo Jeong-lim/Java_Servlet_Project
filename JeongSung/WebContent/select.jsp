@@ -24,9 +24,11 @@
 	<center>	
 	<c:forEach var="reviewer" items="${reviewerNameList}">		
 			<div class="img_circle">
-					<img class="profile" src="${reviewer}.png">
+					<a href="Main.do?name=${reviewer}">
+					<img class="profile" src="${reviewer}.png"></a>
 				</div>
-				<span style="position: relative; top: 30px; right: 95px;"><a href="Main.do">${reviewer}</a></span>						
+				<span style="position: relative; top: 30px; right: 95px;">
+				<a href="Main.do?name=${reviewer}" style="text-decoration: none; color: black;">${reviewer}</a></span>						
 	</c:forEach>
 	</center>
 	</div>

@@ -35,8 +35,9 @@ public class ReviewDao {
 		int result=0;
 		try {
 			con = dataSource.getConnection();
-			String sql = "select reviewer_id from reviews where reviewer_name='name'";
+			String sql = "select reviewer_id from reviews where reviewer_name=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, name);
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
 				result = rs.getInt(1);
@@ -164,6 +165,7 @@ public class ReviewDao {
 			}finally {
 				if(con!=null) try {con.close();} catch(Exception e) {}
 			}
+			System.out.println(data);
 			return data;		
 		}
 	
@@ -196,7 +198,7 @@ public class ReviewDao {
 	}
 	
 	// 이름에 따른 리뷰 상세조회
-	public List<ReviewVo> getReviewName(String name){
+	public List<ReviewVo> getReviewDetails(String name){
 		List<ReviewVo> reviewList = new ArrayList<>(); 
 		Connection con = null;
 		try {
@@ -288,14 +290,14 @@ public class ReviewDao {
 		Connection con = null;
 		try {
 			con = dataSource.getConnection();
-			String sql = "update reviews set reviewer_id, reviewer_name=?, "
-						+ "book_type=?, review_number=?, book_title=?, author=?, memo=? "
+			String sql = "update reviews set reviewer_id=?, reviewer_name=?, "
+						+ "review_number=?, book_type=?, book_title=?, author=?, memo=? "
 						+ "where review_number=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, review.getReviewerId());
 			stmt.setString(2, review.getReviewerName());
-			stmt.setString(3, review.getBookType());
-			stmt.setInt(4, review.getReviewNumber());
+			stmt.setInt(3, review.getReviewNumber());
+			stmt.setString(4, review.getBookType());
 			stmt.setString(5, review.getBookTitle());
 			stmt.setString(6, review.getAuthor());
 			stmt.setString(7, review.getMemo());

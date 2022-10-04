@@ -30,6 +30,18 @@ div.d1 {
 	background-color: #D1FAE5;
 	margin-top: 2%;
 	color: #34D399;
+	padding-left: 1%;
+	padding-right: 1%;
+}
+
+.bookReviewer {
+	float: left;
+	margin-left: 5%;
+	background-color: #FEF3C7;
+	margin-top: 2%;
+	color: #FBBF24;
+	padding-left: 1%;
+	padding-right: 1%;
 }
 
 .content_container {
@@ -71,5 +83,106 @@ h3 {
 	color: black;
 }
 
+/* Scroll Animation (sa, 스크롤 애니메이션) */
+.sa {
+	opacity: 0;
+	transition: all .5s ease;
+}
 
+/* 아래에서 위로 페이드 인 */
+.sa-up {
+	transform: translate(0, 100px);
+}
+/* 위에서 아래로 페이드 인 */
+.sa-down {
+	transform: translate(0, -100px);
+}
+/* 왼쪽에서 오른쪽으로 페이드 인 */
+.sa-right {
+	transform: translate(-100px, 0);
+}
+/* 오른쪽에서 왼쪽으로 페이드 인 */
+.sa-left {
+	transform: translate(100px, 0);
+}
+/* 왼쪽으로 회전하면서 페이드 인 */
+.sa-rotateL {
+	transform: rotate(180deg);
+}
+/* 오른쪽으로 회전하면서 페이드 인 */
+.sa-rotateR {
+	transform: rotate(-180deg);
+}
+/* 작아진 상태에서 커지면서 페이드 인 */
+.sa-scaleUp {
+	transform: scale(.5);
+}
+/* 커진 상태에서 작아지면서 페이드 인 */
+.sa-scaleDown {
+	transform: scale(1.5);
+}
 
+.sa.show {
+	opacity: 1;
+	transform: none;
+}
+
+.reviewall_update {
+	float: right;
+	border-radius: 0;
+	color: #1F2937;
+	text-decoration: none;
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 20px;
+	height: 30px;
+	max-height: 30px;
+	background: none;
+	font-weight: 700;
+	border: 0;
+	border-radius: 0;
+	transition-timing-function: ease-in-out;
+	transition-property: background;
+	transition-duration: 150ms;
+	box-shadow: none;
+	margin-bottom: 3%;
+	margin-right: 3%
+
+}
+
+.reviewall_update:hover {
+	background: #F7F9FD;
+	color: #3B82F6;
+}
+
+.reviewall_delete {
+	float: right;
+	border-radius: 0;
+	color: #1F2937;
+	text-decoration: none;
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 20px;
+	height: 30px;
+	max-height: 30px;
+	background: none;
+	font-weight: 700;
+	border: 0;
+	border-radius: 0;
+	transition-timing-function: ease-in-out;
+	transition-property: background;
+	transition-duration: 150ms;
+	box-shadow: none;
+	margin-bottom: 3%;
+}
+
+.reviewall_delete:hover {
+	background: #F7F9FD;
+	color: #DC2626;
+}

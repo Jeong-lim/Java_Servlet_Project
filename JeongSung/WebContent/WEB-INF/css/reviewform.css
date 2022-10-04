@@ -1,16 +1,18 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'GangwonEdu_OTFBoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'NotoSerifKR';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
-*{
-	font-family: 'GangwonEdu_OTFBoldA';
-    margin-top: 0;
-    padding: 0;
+* {
+	font-family: 'NotoSerifKR';
+	margin: 0;
+	padding: 0;
 }
 
 .top{
@@ -19,6 +21,7 @@
 }
 h1{
 	font-size:1.5rem;
+	margin-bottom: 2%;
 }
 h2{
 	font-size:0.9rem;
@@ -44,4 +47,82 @@ select {
    text-align: center;
    -ms-text-align-last: center;
    -moz-text-align-last: center;
+}
+
+.select {
+	width: 100px;
+	height: 32px;
+	background-size: 20px;
+	padding: tpx 30px 5px 10px;
+	border-radius: 4px;
+	outline: 0 none;
+	text-align: center;
+	border: 2px solid #FCD34D;
+}
+
+.select option {
+	background: #FCD34D;
+	color: #fff;
+	padding 3px 0;
+	border: 1px solid #FCD34D;
+}
+
+.reviewform_input_title {
+	width: 500px;
+	height: 30px;
+	
+	border-radius: 2%;
+}
+input {
+	border: 2px solid #D1D5DB;
+}
+
+textarea {
+	border: 2px solid #D1D5DB;
+}
+
+input:focus {
+	border: 2px solid  #FCD34D;
+	outline: none;
+	
+}
+
+input:hover {
+	border: 2px solid  #FCD34D;
+	outline: none;
+}
+
+textarea:focus {
+	border: 2px solid #FCD34D;
+	outline: none;
+}
+
+textarea:hover {
+	border: 2px solid #FCD34D;
+	outline: none;
+}
+
+.reviewform_button {
+	display: inline-block;
+	outline: 0;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 2px 5px 0 rgb(213 217 217/ 50%);
+	background: #FFD814;
+	border: 1px solid #FCD200;
+	font-size: 13px;
+	height: 31px;
+	padding: 0 11px;
+	text-align: center;
+	width: 100%;
+	min-width: 200px;
+	font-weight: 500;
+	color: #0F1111;
+	margin-bottom: 5%;
+}
+
+.reviewform_button:hover {
+	background: #F7CA00;
+	border-color: #F2C200;
+	box-shadow: 0 2px 5px 0 rgb(213 217 217/ 50%);
 }

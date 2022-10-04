@@ -31,53 +31,39 @@ public class ReviewServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		String cmd = uri.substring(uri.lastIndexOf('/'));
 		request.setAttribute("reviewerNameList", dao.ReviewerSelects());
-		String view = "/select.jsp";
+		String view = "/select.jsp";	// 초기화면
 		
 		
-		if("/Main.do".equalsIgnoreCase(cmd)) {
+		if("/Main.do".equalsIgnoreCase(cmd)) {		//name 선택하면 main 페이지로 이동
 			String name = request.getParameter("name");			
 			request.setAttribute("name", name);
 			request.setAttribute("namelist", dao.getReviewerNames());
 			view = "main.jsp";
-		}else if("/ReviewList.do".equals(cmd)) {
-			System.out.println("리뷰 상세조회");
-			String reviewerName = request.getParameter("reviewerName");
-			request.setAttribute("name", reviewerName);
-			System.out.println("1");
-			System.out.println(reviewerName);
-			System.out.println("2");
-			//String reviewNum = request.getParameter("reviewNumber");
-			//int reviewNumber = Integer.parseInt(reviewNum);
-			int reviewNumber = dao.getReviewNumber(reviewerName);
-			System.out.println(reviewNumber);
-			request.setAttribute("reviewlist", dao.getReviewName(reviewerName));			
-			view = "/WEB-INF/views/review/reviewlist.jsp";
-		}else if("/ReviewInsert.do".equals(cmd)) {
+		}else if("/ReviewInsert.do".equals(cmd)) {		//Create
 			System.out.println("리뷰 작성");
 			request.setAttribute("reviewNumber", dao.setReviewNumber());
 			request.setAttribute("namelist", dao.getReviewerNames());
 			view = "/WEB-INF/views/review/reviewform.jsp";
-		}else if("/ReviewDetails.do".equals(cmd)) {
+		}else if("/ReviewDetails.do".equals(cmd)) {		//상세보기
 			System.out.println("리뷰 상세조회");
 			String reviewerName = request.getParameter("reviewerName");
-			int reviewNumber = dao.getReviewNumber(reviewerName);
-			System.out.println(reviewNumber);
-			request.setAttribute("review", dao.getReviewDetails(reviewNumber));
-			view = "/WEB-INF/views/review/reviewdetails.jsp";
-		}else if("/ReviewUpdate.do".equals(cmd)) {
-			System.out.println("리뷰 수정");
-			request.setAttribute("reviewNumber", dao.setReviewNumber());
+			request.setAttribute("name", reviewerName);
 			request.setAttribute("namelist", dao.getReviewerNames());
-			String reviewNumStr = request.getParameter("reviewNumber");
-			int reviewNum = Integer.parseInt(reviewNumStr);
-			request.setAttribute("review", dao.getReview(reviewNum));
-			System.out.println(reviewNum);			
-			
-			view = "/WEB-INF/views/review/updateform.jsp";
-		}else if("/ReviewDelete.do".equals(cmd)) {	
+			request.setAttribute("reviewlist", dao.getReviewDetails(reviewerName));			
+			view = "/WEB-INF/views/review/reviewlist.jsp";
+		}else if("/ReviewUpdate.do".equals(cmd)) {		//Update
+			System.out.println("리뷰 수정");			
+			int reviewNum = Integer.parseInt(request.getParameter("reviewNumber"));
+			System.out.println(reviewNum+"진짜리뷰넘버");
+			request.setAttribute("reviewNumber", reviewNum);
+			request.setAttribute("namelist", dao.getReviewerNames());			
+			request.setAttribute("review", dao.getReview(reviewNum));			
+			view = "/WEB-INF/views/review/reviewupdateform.jsp";
+		}else if("/ReviewDelete.do".equals(cmd)) {		//Delete
 			view = "/WEB-INF/views/review/reviewdeleteform.jsp";
-		}else if("/ReviewAll.do".equals(cmd)) {
+		}else if("/ReviewAll.do".equals(cmd)) {			//Read
 			System.out.println("전체");
+			request.setAttribute("namelist", dao.getReviewerNames());	
 			request.setAttribute("allreviewlist", dao.getAllReviews());
 			view = "/WEB-INF/views/review/reviewall.jsp";
 		}
@@ -92,7 +78,8 @@ public class ReviewServlet extends HttpServlet {
 		String uri = request.getRequestURI();
 		String cmd = uri.substring(uri.lastIndexOf('/'));
 		
-		if("/ReviewInsert.do".equals(cmd)) {
+		//Insertform 양식으로 revuewVo 파라미터 받아서 다른 컨트롤러로 redirect
+		if("/ReviewInsert.do".equals(cmd)) {	
 			String reviewerName = request.getParameter("reviewerName");
 			String bookType = request.getParameter("type");
 			String reviewNumber = request.getParameter("reviewNumber");
@@ -113,23 +100,24 @@ public class ReviewServlet extends HttpServlet {
 			dao.insertReview(review);
 			
 			response.sendRedirect("ReviewAll.do");
+			
+		//Updateform 양식으로 revuewVo 파라미터 받아서 다른 컨트롤러로 redirect
 		}else if("/ReviewUpdate.do".equals(cmd)) {
 
 			String reviewNumber = request.getParameter("reviewNumber");
 			String reviewerName = request.getParameter("reviewerName");
 			int reviewerId = dao.getReviewerId(reviewerName); 
-			String bookType = request.getParameter("bookType");
+			String bookType = request.getParameter("type");
 			String bookTitle = request.getParameter("bookTitle");
 			String author = request.getParameter("author");
 			String memo = request.getParameter("memo");
 			ReviewVo review = new ReviewVo();
-			System.out.println(bookTitle);
+			review.setReviewerId(reviewerId);
 			review.setReviewerName(reviewerName);
+			review.setReviewNumber(Integer.parseInt(reviewNumber));
 			review.setBookType(bookType);
 			review.setBookTitle(bookTitle);
 			review.setAuthor(author);
-			review.setReviewerId(reviewerId);
-			review.setReviewNumber(Integer.parseInt(reviewNumber));
 			review.setMemo(memo);
 			System.out.println(review);
 			dao.updateReview(review);

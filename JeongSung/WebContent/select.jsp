@@ -8,7 +8,7 @@
 </head> 
 <body>
 	<div class="img_container">
-		<img src="select.png" width=1000 height=600 class="select_img">
+		<img src="select.png" width=1200 height=600 class="select_img">
 	</div>
 	<br/>
 	
@@ -19,6 +19,8 @@
 	<div class="text2">
 	프로필을 선택하세요<br><br>
 	</div>	
+
+
 	
 	<div class="img_container">
 	<center>	
@@ -26,8 +28,9 @@
 			<div class="img_circle">
 					<img class="profile" src="${reviewer}.png">
 				</div>
-				<span style="position: relative; top: 30px; right: 95px;"><a href="Main.do?name=${reviewer}">${reviewer}</a></span>						
-	</c:forEach>
+				<span class="selectUser" style="position: relative; top: 30px; right: 87px;"><a
+					href="Main.do?name=${reviewer}" style="text-decoration: none; color: black;">${reviewer}</a></span>
+			</c:forEach>
 	</center>
 	</div>
 	

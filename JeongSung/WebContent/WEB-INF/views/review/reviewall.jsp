@@ -20,28 +20,36 @@
 
 
 	<c:forEach var="review" items="${allreviewlist}">
+		<div class="sa sa-up">
 		<div class="list_container">
 			<div class="d1">
 				<div class="_container">
-					<div class="bookTitle">${review.reviewerName}</div>
 					<div class="bookTitle">${review.bookTitle}</div>
 					<div class="bookType">${review.bookType}</div>
+					<div class="bookReviewer">${review.reviewerName}</div>
 					<br /> <br />
 					<div class="content_container">
 						<div class="author">${review.author}</div>
 						<div class="memo">${review.memo}</div>
 						<br/><br/>
+						
+						<div>
+						
+					<a href="ReviewUpdate.do?reviewNumber=${review.reviewNumber}"><button  class="reviewall_update">수정하기</button></a>
 					<!-- 삭제 -->						
 					<form action="ReviewDelete.do" method="POST">
               		<input type="hidden" name="reviewNumber" value=${review.reviewNumber}>
-              		<input type="submit" value="delete" style="background: #CEF6D8">
-             		</form>
+              		<input type="submit" value="삭제하기" class="reviewall_delete">
+              		</form>
+              		</div>
+             		
              		<!-- 수정 -->			
-             		<a href="ReviewUpdate.do?reviewNumber=${review.reviewNumber}">update</a>
+             		
              				             		
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 
 
@@ -55,6 +63,23 @@
  	<td>${review.memo}</td>	
  </tr> --%>
  </c:forEach>
- 	
+ 		<script>
+      // Scroll Animation (sa, 스크롤 애니메이션)
+      const saTriggerMargin = 300;
+      const saElementList = document.querySelectorAll('.sa');
+
+      const saFunc = function() {
+        for (const element of saElementList) {
+          if (!element.classList.contains('show')) {
+            if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+              element.classList.add('show');
+            }
+          }
+        }
+      }
+
+      window.addEventListener('load', saFunc);
+      window.addEventListener('scroll', saFunc);
+    </script>
 </body>
 </html>

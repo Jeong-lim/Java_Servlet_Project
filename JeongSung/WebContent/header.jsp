@@ -16,11 +16,11 @@
 			<div class="book_button_wrapper">
 				
 				<img src="book.png" width=15 height=15 /> 
-				<a href="ReviewAll.do" class="book_button">정성의 서재 둘러보기</a>
-				<form name="form1" action="ReviewList.do" method="GET">
+				<a href="ReviewAll.do" class="book_button" style="text-decoration: none;">정성의 서재 둘러보기</a>
+				<form name="form1" action="ReviewDetails.do" method="GET">
 				<input type=hidden value="checking">
 				<div class="select123" onchange="javascript:document.form1.submit();">
-				<select name="reviewerName" style="width:150px;height:30px;">
+				<select class="select" name="reviewerName">
 					<c:forEach var="name" items="${namelist}">
 					<option value="${name}">${name}</option>
 					</c:forEach>
@@ -31,7 +31,7 @@
 			</div>
 			<div class="header_menu_container">
 				<img src="pencil.png" width=15 height=15 /> 
-				<a href="ReviewInsert.do" class="write_button">좋은 글 나누기</a>	
+				<a href="ReviewInsert.do" class="write_button" style="text-decoration: none;">좋은 글 나누기</a>	
 			</div>
 		</div>
 		<br />

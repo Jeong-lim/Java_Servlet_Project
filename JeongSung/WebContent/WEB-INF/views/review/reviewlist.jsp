@@ -20,15 +20,17 @@
 
 
 	<c:forEach var="review" items="${reviewlist}">
-		<div class="list_container">
-			<div class="d1">
-				<div class="_container">
-					<div class="bookTitle">${review.bookTitle}</div>
-					<div class="bookType">${review.bookType}</div>
-					<br /> <br />
-					<div class="content_container">
-						<div class="author">${review.author}</div>
-						<div class="memo">${review.memo}</div>
+		<div class="sa sa-up">
+			<div class="list_container">
+				<div class="d1">
+					<div class="_container">
+						<div class="bookTitle">${review.bookTitle}</div>
+						<div class="bookType">${review.bookType}</div>
+						<br /> <br />
+						<div class="content_container">
+							<div class="author">${review.author}</div>
+							<div class="memo">${review.memo}</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -44,7 +46,24 @@
  	<td>${review.author}</td>
  	<td>${review.memo}</td>	
  </tr> --%>
- </c:forEach>
- 	
+	</c:forEach>
+	<script>
+      // Scroll Animation (sa, 스크롤 애니메이션)
+      const saTriggerMargin = 300;
+      const saElementList = document.querySelectorAll('.sa');
+
+      const saFunc = function() {
+        for (const element of saElementList) {
+          if (!element.classList.contains('show')) {
+            if (window.innerHeight > element.getBoundingClientRect().top + saTriggerMargin) {
+              element.classList.add('show');
+            }
+          }
+        }
+      }
+
+      window.addEventListener('load', saFunc);
+      window.addEventListener('scroll', saFunc);
+    </script>
 </body>
 </html>

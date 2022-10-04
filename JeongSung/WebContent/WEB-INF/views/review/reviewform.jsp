@@ -9,13 +9,13 @@
 </head>
 <body>
 	<div class="top">
-		<img src="select.png" width=300 height=200 class="select_img">
+		<img src="select.png" width=400 height=200 class="select_img">
 	</div>
 	
 	<div class="top">
 		<h1>어떤 책을 읽으셨나요?</h1>
 
-		<h2>헤리언과 공유하고 싶은 책이 있으신가요?</h2>
+		<h2>우리들과 공유하고 싶은 책이 있으신가요?</h2>
 		<h2>정림님이 적어주시는 내용은 정성 서재를 통해 모두와 공유됩니다.</h2>
 	</div>
 
@@ -23,7 +23,7 @@
 		<form action="ReviewInsert.do" method="post">
 					
 					Librarian
-					<select name="reviewerName"  style="width:100px; height:30px;">
+					<select name="reviewerName" class="select" >
 					<c:forEach var="name" items="${namelist}">
 					<option value="${name}">${name}</option>
 					</c:forEach>
@@ -31,7 +31,7 @@
 					
 					<span class="type_box">
 					종류
-					<select name="type"  style="width:100px;height:30px; text-align: center;">
+					<select name="type" class="select">
 					<option value="인문">인문</option>
 					<option value="소설">소설</option>
 					<option value="자기계발">자기계발</option>
@@ -42,13 +42,13 @@
 					</span>
 					
 					<span class="type_box">
-					글번호 ${reviewNumber}
+					글번호  : ${reviewNumber}
 					</span>
 					<input type="hidden" id="reviewNumber" name="reviewNumber" value="${reviewNumber}">
 					
 					<div style="text_box">
 					제목</br>
-					<input type="text" name="bookTitle" style="width:500px;height:30px;"></br></br>
+					<input type="text" name="bookTitle" class="reviewform_input_title"></br></br>
 				
 					저자</br>
 					<input type="text" name="author" style="width:500px;height:30px;"></br></br>
@@ -57,7 +57,7 @@
 					<textarea name="content"  style="width:500px; height:200px; resize:none;"></textarea></br></br>
 					
 								
-					<input type="submit" value=" 내 서가에 더하기 " style="width:500px;height:30px;">
+					<input class="reviewform_button" type="submit" value=" 내 서가에 더하기 " style="width:500px;height:30px;">
 									
 					</div>				
 		</form>

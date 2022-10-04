@@ -29,7 +29,7 @@
 			</div>
 			<div class="header_img_container">
 				<img src="flower.png" width=400 height=300 class="people_img">
-			</div>
+			</div>	
 		</div>
 	</div>
 	

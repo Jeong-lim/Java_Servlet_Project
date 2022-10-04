@@ -23,7 +23,7 @@
 		<form action="ReviewInsert.do" method="post">
 					
 					Librarian
-					<select name="reviewerName"  style="width:100px;height:30px;">
+					<select name="reviewerName"  style="width:100px; height:30px;">
 					<c:forEach var="name" items="${namelist}">
 					<option value="${name}">${name}</option>
 					</c:forEach>
@@ -31,18 +31,21 @@
 					
 					<span class="type_box">
 					종류
-					<select name="bookType"  style="width:100px;height:30px;">
-					<option value="bookType">인문</option>
-					<option value="bookType">소설</option>
-					<option value="bookType">자기계발</option>
-					<option value="bookType">경제</option>
-					<option value="bookType">경영</option>
-					<option value="bookType">과학</option>
+					<select name="type"  style="width:100px;height:30px; text-align: center;">
+					<option value="인문">인문</option>
+					<option value="소설">소설</option>
+					<option value="자기계발">자기계발</option>
+					<option value="경제">경제</option>
+					<option value="경영">경영</option>
+					<option value="과학">과학</option>
 					</select>					
 					</span>
+					
 					<span class="type_box">
-					글번호 ${reviewNumber}</br></br>
+					글번호 ${reviewNumber}
 					</span>
+					<input type="hidden" id="reviewNumber" name="reviewNumber" value="${reviewNumber}">
+					
 					<div style="text_box">
 					제목</br>
 					<input type="text" name="bookTitle" style="width:500px;height:30px;"></br></br>
@@ -51,14 +54,14 @@
 					<input type="text" name="author" style="width:500px;height:30px;"></br></br>
 					
 					메모</br>
-					<textarea name="memo"  style="width:500px; height:200px; resize:none;"></textarea></br></br>
+					<textarea name="content"  style="width:500px; height:200px; resize:none;"></textarea></br></br>
 					
 								
 					<input type="submit" value=" 내 서가에 더하기 " style="width:500px;height:30px;">
-					
-					</div>
-	</div>
-
-
+									
+					</div>				
+		</form>
+		</div>
+	
 </body>
 </html>

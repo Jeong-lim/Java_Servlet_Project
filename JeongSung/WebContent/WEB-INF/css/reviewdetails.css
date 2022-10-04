@@ -1,0 +1,40 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+	font-family: 'GangwonEdu_OTFBoldA';
+    margin: 0;
+    padding: 0;
+}
+.header_all_container {
+	text-align:center;
+	width: 100%;
+}
+
+.people_img {
+	right: 0;
+}
+
+.header_nim {
+	float: left;
+	font-weight: bolder;
+}
+
+.header_name {
+	float: left;
+	color: #A5B4FC;
+}
+
+.header_content {
+	font-weight: 100;
+	font-size: large;
+}
+
+.header_content_container {
+	float:center;
+}
+

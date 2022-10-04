@@ -24,18 +24,12 @@
 	<center>	
 	<c:forEach var="reviewer" items="${reviewerNameList}">		
 			<div class="img_circle">
-					<a href="Main.do?name=${reviewer}">
-					<img class="profile" src="${reviewer}.png"></a>
+					<img class="profile" src="${reviewer}.png">
 				</div>
-				<span style="position: relative; top: 30px; right: 95px;">
-				<a href="Main.do?name=${reviewer}" style="text-decoration: none; color: black;">${reviewer}</a></span>						
+				<span style="position: relative; top: 30px; right: 95px;"><a href="Main.do?name=${reviewer}">${reviewer}</a></span>						
 	</c:forEach>
 	</center>
 	</div>
-	
-	<a href="ReviewList.do">회원 목록 조회</a>
-	
-	<a href="ReviewInsert.do">회원 목록 입력</a>
 	
 </body>
 </html>

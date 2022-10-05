@@ -291,17 +291,16 @@ public class ReviewDao {
 		try {
 			con = dataSource.getConnection();
 			String sql = "update reviews set reviewer_id=?, reviewer_name=?, "
-						+ "review_number=?, book_type=?, book_title=?, author=?, memo=? "
+						+ " book_type=?, book_title=?, author=?, memo=? "
 						+ "where review_number=?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setInt(1, review.getReviewerId());
-			stmt.setString(2, review.getReviewerName());
-			stmt.setInt(3, review.getReviewNumber());
-			stmt.setString(4, review.getBookType());
-			stmt.setString(5, review.getBookTitle());
-			stmt.setString(6, review.getAuthor());
-			stmt.setString(7, review.getMemo());
-			stmt.setInt(8, review.getReviewNumber());
+			stmt.setString(2, review.getReviewerName());	
+			stmt.setString(3, review.getBookType());
+			stmt.setString(4, review.getBookTitle());
+			stmt.setString(5, review.getAuthor());
+			stmt.setString(6, review.getMemo());
+			stmt.setInt(7, review.getReviewNumber());
 			stmt.executeUpdate();
 		}catch(SQLException e) {
 			throw new RuntimeException(e);

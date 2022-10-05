@@ -26,13 +26,13 @@ public class ReviewServlet extends HttpServlet {
     ReviewDao dao = new ReviewDao();
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 		request.setCharacterEncoding("utf-8");
 		String uri = request.getRequestURI();
 		String cmd = uri.substring(uri.lastIndexOf('/'));
 		request.setAttribute("reviewerNameList", dao.ReviewerSelects());
 		String view = "/select.jsp";	// 초기화면
-		
+
 		
 		if("/Main.do".equalsIgnoreCase(cmd)) {		//name 선택하면 main 페이지로 이동
 			String name = request.getParameter("name");			
@@ -110,7 +110,7 @@ public class ReviewServlet extends HttpServlet {
 			String bookType = request.getParameter("type");
 			String bookTitle = request.getParameter("bookTitle");
 			String author = request.getParameter("author");
-			String memo = request.getParameter("memo");
+			String memo = request.getParameter("content");
 			ReviewVo review = new ReviewVo();
 			review.setReviewerId(reviewerId);
 			review.setReviewerName(reviewerName);

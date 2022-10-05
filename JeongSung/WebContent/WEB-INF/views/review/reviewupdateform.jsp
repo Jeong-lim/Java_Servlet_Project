@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="form_css">
-		<form action="ReviewInsert.do" method="post">
+		<form action="ReviewUpdate.do" method="post">
 					
 					Librarian
 					<select name="reviewerName" class="select" >

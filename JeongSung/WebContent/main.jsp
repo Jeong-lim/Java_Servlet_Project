@@ -219,7 +219,6 @@
 				&copy; <span class="this-year"></span> Copyright ⓒ 2022
 				Jeong Sung. All rights reserved.
 			</p>
-
 		</div>
 	</footer>
 
